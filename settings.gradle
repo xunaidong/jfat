@@ -1,0 +1,17 @@
+rootProject.name = "jfat"
+
+include "jfat-commons"
+include "jfat-core"
+include "jfat-cache"
+include "jfat-mvc"
+include "jfat-jda"
+include "jfat-socket"
+include "jfat-security"
+include "jfat-instruction"
+include "jfat-test"
+include "jfat-log"
+include "jfat-web"
+include "jfat-webmvc"
+include "jfat-ws"
+include "jfat-webmvc-portlet"
+
