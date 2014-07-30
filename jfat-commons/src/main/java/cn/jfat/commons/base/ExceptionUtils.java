@@ -14,20 +14,41 @@
  * limitations under the License.
  */
 
+
 package cn.jfat.commons.base;
 
 /**
- * 
- * 
- * <pre class="code">
- * 用法,示例</code>
+ * <P>描述</P>
+ * <pre class="code">用法,示例</code>
  * @author xunaidong
  * @since 0.1
  */
-public final class Preconditions {
+public final class ExceptionUtils {
 	
-	private Preconditions() {
-
+	private ExceptionUtils(){}
+	
+   /**
+	* 判断是否是checked异常 
+	* @param @param ex
+	* @return boolean
+	*/
+	public static boolean isCheckedException(Throwable ex) {
+		return !(ex instanceof RuntimeException || ex instanceof Error);
+	}
+	
+	
+	public static boolean isCompatibleWithThrowsClause(Throwable ex, Class<?>... declaredExceptions) {
+		if (!isCheckedException(ex)) {
+			return true;
+		}
+		if (declaredExceptions != null) {
+			for (Class<?> declaredException : declaredExceptions) {
+				if (declaredException.isInstance(ex)) {
+					return true;
+				}
+			}
+		}
+		return false;
 	}
 
 }

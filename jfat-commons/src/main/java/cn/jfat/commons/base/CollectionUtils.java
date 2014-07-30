@@ -14,20 +14,19 @@
  * limitations under the License.
  */
 
+
 package cn.jfat.commons.base;
 
 /**
- * 
- * 
- * <pre class="code">
- * 用法,示例</code>
+ * <P>描述</P>
+ * <pre class="code">用法,示例</code>
  * @author xunaidong
  * @since 0.1
  */
-public final class Preconditions {
+public final class CollectionUtils {
 	
-	private Preconditions() {
-
+	private CollectionUtils() {
+		
 	}
 
 }
