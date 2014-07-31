@@ -13,18 +13,26 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+package cn.jfat.commons.date;
 
+import junit.framework.Test;
+import junit.framework.TestSuite;
 
-package cn.jfat.commons.base;
+/** Run all JUnit tests. */
+public final class TESTAll {
 
-/**
- * <P>描述</P>
- * <pre class="code">用法,示例</code>
- * @author xunaidong
- * @since 0.1
- */
-public final class DateUtils {
-	
-	private DateUtils() {}
+  public static void main(String args[]) {
+    String[] testCaseName = { TESTAll.class.getName()};
+    junit.textui.TestRunner.main(testCaseName);
+ }
+  
+  public static Test suite ( ) {
+    TestSuite suite= new TestSuite("All JUnit Tests");
 
+    suite.addTest(new TestSuite(TESTDateTime.class));
+    suite.addTest(new TestSuite(TESTDateTimeFormatter.class));
+    suite.addTest(new TestSuite(TESTDateTimeInterval.class));
+    
+    return suite;
+  }
 }
